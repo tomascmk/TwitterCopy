@@ -1,0 +1,175 @@
+$black: #000000;
+$white00: #ffffff;
+$white10: #D9D9D9;
+$gray00: #6D767D;
+$gray10: #2F3336;
+$lightBlue00: #1D9BF0;
+$lightBlue10: rgb(24, 140, 216);
+$blue: rgb(29, 155, 240, 0.1);
+
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+}
+
+main{
+    min-height: 90vh;
+    max-width: 100vw;
+    margin: 0px !important;
+}
+
+.section{
+    &__left{
+        padding: 0px !important;
+        background-color: $lightBlue00;
+        background-image: url("../utils/img/background.png");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        &__logo{
+            max-width: 75%;
+            max-height: 80%;
+        }
+    }
+    &__right{
+        padding: 0px !important;
+        padding-left: 35px !important;
+        background-color: $black;
+        color: $white10;
+        &__logo{
+            height: 50px;
+            width: auto;
+            margin: 40px 0px 10px 0px;
+        }
+        &__title{
+            &--first{
+                font-size: 75px;
+                font-weight: 800;
+                margin: 40px 0px;
+            }
+            &--second{
+                font-size: 35px;
+                font-weight: 800;
+                margin-top: 40px;
+                margin-bottom: 20px;
+
+            }
+        }
+    }
+}
+
+@mixin signInButton($font-weight, $background-color, $color, $type) {
+    padding: 10px 0px;
+    border: transparent 0px;
+    border-radius: 50px;
+    margin: 5px 0px;
+    font-weight: $font-weight;
+    background-color: $background-color;
+    color: $color;
+    @if $type == primary {
+        &:hover{
+            background-color: $white10;
+        }
+    } @else if $type == secondary {
+        &:hover{
+            background-color: $lightBlue10;
+        }
+
+    } @else if $type == outline{
+        &:hover{
+            background-color: $blue;
+
+        }
+
+    }
+}
+
+@mixin separator {
+    width: calc(50% - 10px);
+    height: 1px;
+    border-top: 1px solid $gray10;
+}
+
+.signIn{
+    &__container{
+        display: flex;
+        flex-direction: column;
+        width: 300px;
+    }
+    &__button{
+        &-1{
+            @include signInButton(400, $white00, $black, primary);
+        }
+        &-2{
+            @include signInButton(700, $white00, $black, primary);
+        }
+        &-3{
+            @include signInButton(700, $lightBlue00, $white00, secondary);
+        }
+        &-4{
+            @include signInButton(700, transparent, $lightBlue10, outline);
+            border: $gray00 solid 1px;
+            margin-bottom: 50px;
+        }
+        &__logo{
+            width: 25px;
+            height: auto;
+        }
+    }
+    &__separator{
+        width: 100%;
+        &__left{
+            @include separator();
+        }
+        &__middle{
+            width: 10px;
+            margin-bottom: 0px;
+        }
+        &__right{
+            @include separator();
+        }
+    }
+    &__label{
+        font-size: 18px;
+        margin-top: 40px;
+        margin-bottom: 15px;
+    }
+
+}
+
+.terms-description{
+    font-size: 10px;
+    color: $gray00;
+    & a{
+        color: $lightBlue00;
+        &:hover{
+            color: $lightBlue00;
+        }
+    }
+}
+
+.footer{
+    min-height: 10vh;
+    &__list{
+        background-color: $black;
+        color: $gray00;
+        list-style: none;
+        flex-flow: row wrap;
+        padding: 10px;
+        margin: 0px;
+        font-size: 13px;
+        line-height: 1.5rem;
+        &__link{
+            color: $gray00;
+            margin: 0px 10px;
+            &:hover{
+                color: $gray00;
+            }
+        }
+    }
+}
