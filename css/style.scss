@@ -71,6 +71,7 @@ main{
     font-weight: $font-weight;
     background-color: $background-color;
     color: $color;
+    font-size: 14px;
     @if $type == primary {
         &:hover{
             background-color: $white10;
@@ -110,6 +111,11 @@ main{
         }
         &-3{
             @include signInButton(700, $lightBlue00, $white00, secondary);
+            white-space: nowrap;
+            padding-left: 20px;
+            padding-right: 20px;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
         &-4{
             @include signInButton(700, transparent, $lightBlue10, outline);
