@@ -15,6 +15,7 @@ $blue: rgb(29, 155, 240, 0.1);
 
 body{
     font-family: 'Roboto', sans-serif;
+    min-height: 100vh;
 }
 
 main{
@@ -22,7 +23,10 @@ main{
     max-width: 100vw;
     margin: 0px !important;
 }
+footer{
 
+    min-height: 10vh;
+}
 .section{
     &__left{
         padding: 0px !important;
@@ -160,7 +164,6 @@ main{
 }
 
 .footer{
-    min-height: 10vh;
     &__list{
         background-color: $black;
         color: $gray00;
@@ -170,6 +173,7 @@ main{
         margin: 0px;
         font-size: 13px;
         line-height: 1.5rem;
+        min-height: 10vh;
         &__link{
             color: $gray00;
             margin: 0px 10px;
